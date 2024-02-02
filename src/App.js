@@ -11,7 +11,7 @@ function App() {
   const getData = useCallback(async () => {
     setLoader(true);
     axios
-      .get("http://jsonplaceholder.typicode.com/photos")
+      .get("https://jsonplaceholder.typicode.com/photos")
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="app-wrapper bg-black h-[100vh] overflow-x-hidden relative">
 
-      <img src={avatar} className="w-40 mx-auto mt-10 rounded-full border border-white" />
+      <img src={avatar} alt="" className="w-40 mx-auto mt-10 rounded-full border border-white" />
 
       <div className="main text-center font-bold lg:text-6xl text-3xl text-white mt-[1%]">
         {/* <MoonLoader color="black"/> */}
@@ -45,7 +45,7 @@ function App() {
         </button>
       </div>
 
-      {data.length === 0 && (
+      {loader && (
         <div className="w-fit mx-auto mt-[10%]">
           <MoonLoader color="white" />
         </div>
