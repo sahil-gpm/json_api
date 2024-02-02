@@ -5,11 +5,13 @@ import { motion } from "framer-motion";
 import avatar from "./assets/avatar.png";
 
 function App() {
-  const [data, setData] = useState([]);
-  const [loader, setLoader] = useState(false);
+  const [data, setData] = useState([]); //data state to store the api data
+  const [loader, setLoader] = useState(false); //loader toggle for loading animation
 
   const getData = useCallback(async () => {
     setLoader(true);
+
+    //making an axios post request
     axios
       .get("https://jsonplaceholder.typicode.com/photos")
       .then((res) => {
@@ -28,23 +30,28 @@ function App() {
 
   return (
     <div className="app-wrapper bg-black h-[100vh] overflow-x-hidden relative">
-
-      <img src={avatar} alt="" className="w-40 mx-auto mt-10 rounded-full border border-white" />
+      {/* avatar image  */}
+      <img
+        src={avatar}
+        alt=""
+        className="w-40 mx-auto mt-10 rounded-full border border-white"
+      />
 
       <div className="main text-center font-bold lg:text-6xl text-3xl text-white mt-[1%]">
         {/* <MoonLoader color="black"/> */}
         Loading data through an external API 🚀
       </div>
 
+      {/* heading and the github link button  */}
       <div className="main text-center lg:text-2xl text-sm mx-10 text-white mt-[1%] mb-4">
-        {/* <MoonLoader color="black"/> */}A simple react-app fetching json data
-        from jsonplaceholder ↴
+        A simple react-app fetching json data from jsonplaceholder ↴
         <br />
         <button className="bg-white text-sm text-black font-semibold px-10 py-3 rounded-md mb-8 mt-4">
           Github Link
         </button>
       </div>
 
+      {/* show loading animation whenever the data is getting loaded  */}
       {loader && (
         <div className="w-fit mx-auto mt-[10%]">
           <MoonLoader color="white" />
@@ -93,6 +100,7 @@ function App() {
         return null;
       })}
 
+      {/* small section for me 🤞 */}
       <div className="text-white text-center my-5 text-xs ">
         Developed ⚒️ by Sahil Chavan
       </div>
