@@ -27,45 +27,6 @@ A react-app that represents how to fetch data from a 3rd party API and map it in
 
 
 
-
-# Tech Stack
-
-**Client:** React, TailwindCSS
-
-
-
-
-
-
-# JSON API
-
-A react-app that represents how to fetch data from a 3rd party API and map it in your application in form of a list. This application makes use of the jsonplaceholder api that provides fake APIs for developnment and practising.
-
-
-
-
-# API Reference
-
-#### Get items from the json placeholder API through these endpoints :
-```http
-  GET /photos
-```
-```http
-  GET /albums
-```
-```http
-  GET /users
-```
-```http
-  GET /todos
-```
-```http
-  GET /comments
-```
-
-
-
-
 # Tech Stack
 
 **Client:** React, TailwindCSS
